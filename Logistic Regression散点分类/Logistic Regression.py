@@ -154,7 +154,7 @@ def main(epoch):
 
 if __name__ == '__main__':
     main(100)
-#  main(300)
-#  main(500)
-#  main(800)
-#  main(1000)
+    main(300)
+    main(500)
+    main(800)
+    main(1000)
