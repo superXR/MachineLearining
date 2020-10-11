@@ -96,14 +96,14 @@ def logistic_regression(x, y, epoch, g):
         theta = np.zeros(n).reshape(n, 1)  # 设置权重参数的初始值
         # for j in range(500):
         while (i < epoch):
-            for j in range(500):
-                each_x = np.array([x[j]])
-                each_y = np.array([y[j]])
-                if j == 0:
-                    cost = cost_function(theta, each_x, each_y)  # 得到损失函数的初始值
-                    cost_list.append(cost)
-                theta = update_SGD(theta, each_x, each_y, Learning_rate)  # 更新权值
-                cost = cost_function(theta, each_x, each_y)
+            j = np.random.randint(0, 500)
+            each_x = np.array([x[j]])
+            each_y = np.array([y[j]])
+            if i == 0:
+                cost = cost_function(theta, each_x, each_y)  # 得到损失函数的初始值
+                cost_list.append(cost)
+            theta = update_SGD(theta, each_x, each_y, Learning_rate)  # 更新权值
+            cost = cost_function(theta, each_x, each_y)
             cost_list.append(cost)
             i += 1
     return theta, cost_list
