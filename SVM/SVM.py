@@ -67,6 +67,7 @@ def plot_classifier(classifier, x, y, title='Classifier boundaries'):
 
     # 计算分类器输出
     mesh_output = classifier.predict(np.c_[x_values.ravel(), y_values.ravel()])
+    print(np.c_[x_values.ravel(), y_values.ravel()].shape)
 
     # 重塑数组
     mesh_output = mesh_output.reshape(x_values.shape)
